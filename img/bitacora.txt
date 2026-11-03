@@ -212,7 +212,65 @@ Cinco clases que usé el día de hoy:
 	
 	fw-bold: Modifica el grosor tipográfico aplicando font-weight: 700 (negrita).
 
+Día 2, Reto 3 
 
+Bitácora de conflictos CSS vs. Bootstrap
+Conflicto 1: Color de fondo y tipografía base del sitio (body)
+
+    Qué detecta DevTools:
+
+    En la etiqueta body, las reglas personalizadas background-color: var(--color-crema) y font-family: var(--font-texto) aparecen tachadas por la clase utilitaria .bg-light y por el reinicio global de Bootstrap (_reboot.scss), que impone su propia pila de fuentes del sistema y color de fondo claro genérico.
+
+    Por qué ocurre:
+
+    Bootstrap aplica estilos base al body, y si la etiqueta además lleva la clase .bg-light, esta clase tiene mayor especificidad que el selector simple de elemento body.
+
+    Solución aplicada:
+
+    Retirar la clase .bg-light de la etiqueta <body> en el HTML y asegurar que styles.css se enlace después del CDN de Bootstrap en el <head>, permitiendo que la identidad visual de la marca prevalezca.
+
+Conflicto 2: Subrayado y color en enlaces de pie de página y botones
+
+    Qué detecta DevTools:
+
+    En enlaces como el de correo o los botones de llamada a la acción, Bootstrap inyecta por defecto variables como --bs-link-color y --bs-link-hover-color, provocando subrayados forzados o anulando el cambio de color hacia var(--color-azul-noche).
+
+    Por qué ocurre:
+
+    El reseteo de enlaces de Bootstrap añade propiedades modernas de texto (text-decoration-line, color: rgba(...)) que compiten con las clases personalizadas si ambas comparten el nodo.
+
+    Solución aplicada:
+
+    Definir explícitamente en el CSS personalizado el selector combinado para anular el reseteo:
+    CSS
+
+    a.btn-accion,
+    .contacto a {
+      text-decoration: none !important;
+      color: var(--color-blanco);
+    }
+
+    O bien, en el HTML, prescindir de clases como text-decoration-underline cuando ya se utilicen selectores propios de botón.
+
+Conflicto 3: Colisión de márgenes e interferencia en tarjetas (margin-bottom en cards)
+
+    Qué detecta DevTools:
+
+    En las tarjetas (.tarjeta-rutas-guiadas, .tarjeta-servicio), la regla margin-bottom: var(--espaciado-lg) queda anulada o genera desfases de altura con el sistema de grillas de Bootstrap, ya que las columnas (.col, .col-md-4) gestionan el espaciado mediante gap vertical u horizontal (g-4).
+
+    Por qué ocurre:
+
+    Bootstrap 5 maneja la separación entre tarjetas desde el contenedor padre (.row.g-4), por lo que meter márgenes inferiores manuales dentro de los hijos directos rompe la alineación h-100 y hace que unas tarjetas se vean más largas que otras.
+
+    Solución aplicada:
+
+    Eliminar margin-bottom: var(--espaciado-lg) de las tarjetas dentro de la grilla y dejar que el espaciado lo controle el g-4 de Bootstrap, o sobrescribir el margen a cero dentro de las columnas:
+    CSS
+
+    .row .tarjeta-servicio,
+    .row .tarjeta-rutas-guiadas {
+      margin-bottom: 0;
+    }
 
 
 
