@@ -49,17 +49,8 @@ h1, h2, h3, h4, h5, h6 {
 /* ==========================================================================
    3. HEADER Y NAVEGACIÓN (Mobile-First: 1 columna vertical)
    ========================================================================== */
-header {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  gap: var(--espaciado-md);
-  background-color: var(--color-naranja-pedal);
-  padding: var(--espaciado-md);
-  flex-wrap: wrap;
-}
+
+
 
 header img {
   display: block;
