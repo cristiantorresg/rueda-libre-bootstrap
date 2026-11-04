@@ -283,5 +283,5 @@ En cuanto al tiempo invertido, considero que hubo más tiempo invertido durante 
 
 Que hicé con IA?
 -Gemini me ayudó a identificar algunas otras reglas de css que no había visto que entraban en conflicto como por ejemplo el footer y el media query para tablets ya que bootstrap ya lo había solucionado para aplicar el diseño responsive.
--Decidí usar gemini para agilizar el trabajo de la migración, con el aprendizaje que obtuve el día anterior con la migración de la pagina de inicio a bootstrap, entendí como funcionaba bootstrap en las tarjetas
+-Decidí usar gemini para agilizar el trabajo de la migración; Con el aprendizaje que obtuve el día anterior con la migración de la pagina de inicio a bootstrap, entendí como funcionaba bootstrap en las tarjetas, formularios, listas, encabezados e imagenes, lo cuál me permitio darle las indicaciones a gemini para hacer la migración de tarifas y reservas con los requerimientos especificos del proyecto ya que manualmente era una tarea que requería más tiempo del que teniamos asignado, por lo que decidí que esto me ahorraría tiempo.
 
