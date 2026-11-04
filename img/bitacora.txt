@@ -213,6 +213,7 @@ Cinco clases que usé el día de hoy:
 	fw-bold: Modifica el grosor tipográfico aplicando font-weight: 700 (negrita).
 
 Día 2, Reto 3 
+Migración de los estilos del index del sitio rueda libre a bootstrap completada.
 
 Bitácora de conflictos CSS vs. Bootstrap
 Conflicto 1: Color de fondo y tipografía base del sitio (body)
@@ -272,5 +273,15 @@ Conflicto 3: Colisión de márgenes e interferencia en tarjetas (margin-bottom e
       margin-bottom: 0;
     }
 
+Día 2 reto 4
+Migración de la sección tarifas y reservas del sitio web rueda libre a bootstrap manteniendo estilos de tablas del sitio web anteriormente realizados bajo css.
 
+Conflictos Bootstrap vs CSS
+lo que hice fue quitar las reglas de  CSS que se estaban peleando con Bootstrap para dejar que Bootstrap haga su trabajo sin trabas:   El contenedor principal (main y body): Le quitamos el límite de ancho fijo y los rellenos raros a la etiqueta main. Si no los quitábamos, la página se veía angosta en computadores y dejaba un espacio vacío feo al final de la pantalla.   Las fotos (#imagen-portada e #imagen-nuestros-servicios): Como tenían un identificador # en el CSS, mandaban sobre cualquier clase de Bootstrap. Eso hacía que la foto principal se achicara de más en pantallas grandes y que el logo pequeño de servicios se estirara al 100% en el celular.   El pie de página (footer): Le quitamos el display: flex directo a la etiqueta. Bootstrap ya organiza todo con sus propias columnas (row y col), y tener las dos cosas juntas desordenaba los textos.   Los títulos (h1 a h6): Les quitamos el color azul oscuro forzado para que no choquen con los colores que tú mismo elijas en Bootstrap (como text-dark o text-warning).   
+
+En cuanto al tiempo invertido, considero que hubo más tiempo invertido durante el aprendizaje de bootstrap vs css, pero en la practica entendiendo bootstrap, es mucho más agil y practico que css ya que nos permite en el mismo html por medio de clases ya definidas, aplicarle un estilo a nuestros elementos del sitio sin depender de una hoja de estilos. El css puede coexistir con bootstrap ya que nos ayuda a mantener estilos previamente definidos del sitio, algo a tener en cuenta es que puede entrar en conflicto con los estilos aplicados con bootstrap, por lo que debemos usarlos sin combinar atributos entre si ya que el navegador terminaria interpretando el que tenga mayor predominancia en la jerarquia y anulando quizás el estilo que estemos interesados en aplicar.
+
+Que hicé con IA?
+-Gemini me ayudó a identificar algunas otras reglas de css que no había visto que entraban en conflicto como por ejemplo el footer y el media query para tablets ya que bootstrap ya lo había solucionado para aplicar el diseño responsive.
+-Decidí usar gemini para agilizar el trabajo de la migración, con el aprendizaje que obtuve el día anterior con la migración de la pagina de inicio a bootstrap, entendí como funcionaba bootstrap en las tarjetas
 

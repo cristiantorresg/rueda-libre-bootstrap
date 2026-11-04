@@ -28,13 +28,15 @@
    2. ESTILOS BASE Y TIPOGRAFÍA
    ========================================================================== */
 body {
+  /*
+    estas lineas quedan desactivadas porque entran en conflicto con estilo aplicado con bootstrap 
   font-family: var(--font-texto);
   color: var(--color-gris-asfalto);
   background-color: var(--color-crema);
   margin: 0;
-  padding: 0;
   position: relative;
-  padding-bottom: 4rem;
+  padding-bottom: 4rem;*/
+  padding: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -97,13 +99,16 @@ header img {
 /* ==========================================================================
    4. ESTRUCTURA Y LAYOUT GENERAL (Mobile-First: 1 sola columna)
    ========================================================================== */
-main {
-  max-width: 65rem;
+/*
+   main {
+ 
+   estas lineas quedan desactivadas porque entran en conflicto con estilo aplicado con bootstrap 
+ max-width: 65rem;
   margin: 0 auto;
   padding: var(--espaciado-lg);
   min-height: 80vh;
 }
-
+*/
 .portada-inicio {
   min-height: 60vh;
   display: grid;
@@ -125,7 +130,7 @@ main {
   flex-direction: column;
   gap: var(--espaciado-md);
 }
-
+/*estas lineas quedan desactivadas porque entran en conflicto con estilo aplicado con bootstrap 
 #imagen-portada {
   width: 100%;
 }
@@ -135,7 +140,7 @@ main {
   display: block;
   margin: 0 auto;
 }
-
+*/
 .cobertura {
   display: flex;
   flex-direction: column;
@@ -363,7 +368,7 @@ button[type="submit"]:focus {
   outline: 3px solid var(--color-azul-noche);
   outline-offset: 2px;
 }
-
+/*  estas lineas quedan desactivadas porque entran en conflicto con estilo aplicado con bootstrap 
 footer {
   display: flex;
   justify-content: space-between;
@@ -371,6 +376,7 @@ footer {
   padding-left: var(--espaciado-md);
   padding-right: var(--espaciado-md);
 }
+  */
 
 /* ==========================================================================
    9. ADAPTACIÓN A TABLET Y ESCRITORIO (RESTAURACIÓN ORIGINAL EXACTA)
@@ -416,6 +422,7 @@ footer {
     justify-content: space-between;
   }
 
+  /*  estas lineas quedan desactivadas porque entran en conflicto con estilo aplicado con bootstrap 
   #imagen-portada {
     width: 90%;
   }
@@ -425,6 +432,7 @@ footer {
     justify-content: center;
     align-items: center;
   }
+    */
 
   .cobertura {
     width: 30%;
