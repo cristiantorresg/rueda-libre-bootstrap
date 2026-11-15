@@ -46,3 +46,7 @@ rueda-libre-bootstrap-main/
 │   ├── plegable.png
 │   └── portada.jpeg
 └── index.html
+
+Nota sobre los colaboradores:
+
+Todo este proyecto fue desarrollado únicamente por mí (el dueño del repositorio). Los otros usuarios que aparecen en el historial de cambios se deben a que compartimos computadores con los compañeros de la jornada de la tarde y sus cuentas de Git quedaron abiertas por error en los equipos.
